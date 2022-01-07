@@ -29,7 +29,7 @@ export default function Home() {
         <title>Rick and Morty: Metaverse</title>
         <meta
           name="description"
-          content="Rick and Morty: Metaverse NFT's collection"
+          content="NFT collection"
         />
       </Head>
       <Header currentPage={currentPage} />

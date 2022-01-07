@@ -16,7 +16,7 @@ export const About = ({ setCurrentPage }) => {
   console.log(`About: ${isOnScreen}`);
 
   return (
-    <div className={styles.container}>
+    <div id="about" className={styles.container}>
       <div className={styles.content} ref={ref}>
         <div className={styles.row}>
           <Image
