@@ -1,6 +1,36 @@
 .container {
   background-color: #fff;
-  padding-top: 100px;
   color: #000;
   min-height: 100vh;
+  max-width: 1000px;
+  padding: 100px 20px 0;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 56px;
+  margin-bottom: 50px;
+}
+
+.column {
+  max-width: 400px;
+}
+
+.column:not(:last-of-type) {
+  margin-bottom: 50px;
+}
+
+.column h4 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.column p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
 }
