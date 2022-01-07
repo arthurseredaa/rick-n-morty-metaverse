@@ -19,7 +19,7 @@ export const Header = ({ currentPage }) => {
           <a className={getClassNames('about')} href="/">
             About
           </a>
-          <a className={styles.link} href="#roadmap">
+          <a className={getClassNames('roadmap')} href="#roadmap">
             Roadmap
           </a>
           <a className={styles.link} href="#socials">
