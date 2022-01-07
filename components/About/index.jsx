@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useOnScreen } from '../../hooks/useOnScreen';
 import styles from './about.module.css';
 
@@ -16,14 +17,16 @@ export const About = ({ setCurrentPage }) => {
   return (
     <div className={styles.container} ref={ref}>
       <div className={styles.content}>
-        <div className={styles.row}>
-          <Image
-            src="/images/beth-nft-image.jpg"
-            alt=""
-            width="500"
-            height="500"
-            className={styles.row_image}
-          />
+        <div animate={{ y: [100, 0], opacity: [0, 1] }} className={styles.row}>
+          <div animate={{ opacity: [0, 1] }}>
+            <Image
+              src="/images/beth-nft-image.jpg"
+              alt=""
+              width="500"
+              height="500"
+              className={styles.row_image}
+            />
+          </div>
           <div className={styles.row_text}>
             <h3 className={styles.title}>
               Minting Rick n&apos; Morty <span role="img">🎉</span>
@@ -38,8 +41,7 @@ export const About = ({ setCurrentPage }) => {
             </p>
           </div>
         </div>
-
-        <div className={styles.row}>
+        <div className={styles.row} animate={{ opacity: [0, 1] }}>
           <div className={styles.row_text}>
             <h3 className={styles.title}>
               Giveaway NFT&apos;s !! <span role="img">🥳</span>
@@ -50,14 +52,15 @@ export const About = ({ setCurrentPage }) => {
               <b>SOLD OUT, ONE of YOU Will GET $1500 LIVE!!</b>
             </p>
           </div>
-
-          <Image
-            src="/images/beth-nft-image.jpg"
-            alt=""
-            width="500"
-            height="500"
-            className={styles.row_image}
-          />
+          <div>
+            <Image
+              src="/images/beth-nft-image.jpg"
+              alt=""
+              width="500"
+              height="500"
+              className={styles.row_image}
+            />
+          </div>
         </div>
       </div>
 
