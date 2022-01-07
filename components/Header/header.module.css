@@ -5,7 +5,9 @@
   left: 0;
   width: 100%;
   padding: 20px 0;
-  background-color: #000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
 }
 
 .content {
@@ -30,15 +32,16 @@
 }
 
 .link {
-  transition: color .1s linear;
+  transition: color 0.1s linear;
 }
 
-.link:hover, .link:active {
+.link:hover,
+.link:active {
   color: #710094;
 }
 
 .active_link {
-  color: purple
+  color: purple;
 }
 
 @media (max-width: 900px) {
