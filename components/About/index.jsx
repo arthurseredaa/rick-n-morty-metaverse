@@ -1,11 +1,23 @@
 import Image from 'next/image';
-import React from 'react';
+import { useEffect, useRef } from 'react';
+import { useOnScreen } from '../../hooks/useOnScreen';
 import styles from './about.module.css';
 
-export const About = () => {
+export const About = ({ setCurrentPage }) => {
+  const ref = useRef();
+  const isOnScreen = useOnScreen(ref);
+
+  useEffect(() => {
+    if (isOnScreen && setCurrentPage) {
+      setCurrentPage('about');
+    }
+  }, [isOnScreen, setCurrentPage]);
+
+  console.log(`About: ${isOnScreen}`);
+
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+      <div className={styles.content} ref={ref}>
         <div className={styles.row}>
           <Image
             src="/images/beth-nft-image.jpg"

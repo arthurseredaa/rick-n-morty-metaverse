@@ -41,7 +41,7 @@ export default function Home() {
           exit="exit"
           transition={{ duration: 0.5, type: 'spring' }}
         >
-          <About />
+          <About setCurrentPage={setCurrentPage} />
           <Roadmap setCurrentPage={setCurrentPage} />
         </motion.div>
       </AnimatePresence>

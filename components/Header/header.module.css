@@ -40,3 +40,9 @@
 .active_link {
   color: purple
 }
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+  }
+}

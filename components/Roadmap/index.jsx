@@ -7,10 +7,12 @@ export const Roadmap = ({ setCurrentPage }) => {
   const isOnScreen = useOnScreen(ref);
 
   useEffect(() => {
-    if (isOnScreen) {
+    if (isOnScreen && setCurrentPage) {
       setCurrentPage('roadmap');
     }
   }, [isOnScreen, setCurrentPage]);
+
+  console.log(`Roadmap: ${isOnScreen}`);
 
   return (
     <div ref={ref} className={styles.container}>
