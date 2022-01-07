@@ -15,12 +15,15 @@ export const useOnScreen = (ref, rootMargin = '0px') => {
         rootMargin,
       }
     );
+
     if (ref.current) {
       observer.observe(currentElement);
     }
+
     return () => {
       observer.unobserve(currentElement);
     };
   }, [ref, rootMargin]);
+
   return isIntersecting;
 };

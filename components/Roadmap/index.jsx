@@ -12,10 +12,8 @@ export const Roadmap = ({ setCurrentPage }) => {
     }
   }, [isOnScreen, setCurrentPage]);
 
-  console.log(`Roadmap: ${isOnScreen}`);
-
   return (
-    <div id="#roadmap" ref={ref} className={styles.container}>
+    <div ref={ref} className={styles.container}>
       roadmap
     </div>
   );

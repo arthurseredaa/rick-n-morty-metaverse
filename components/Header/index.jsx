@@ -9,7 +9,30 @@ const variants = {
   close: { opacity: 0, visibility: 'visible' },
 };
 
-export const Header = ({ currentPage }) => {
+const NavigationLinks = ({ getLinkClassNames, handleScroll }) => (
+  <>
+    <p
+      className={getLinkClassNames('about')}
+      onClick={() => handleScroll('about')}
+    >
+      About
+    </p>
+    <p
+      className={getLinkClassNames('roadmap')}
+      onClick={() => handleScroll('roadmap')}
+    >
+      Roadmap
+    </p>
+    <p
+      className={getLinkClassNames('socials')}
+      onClick={() => handleScroll('socials')}
+    >
+      Socials
+    </p>
+  </>
+);
+
+export const Header = ({ currentPage, handleScroll }) => {
   const [isMenuActive, setIsMenuActive] = useState(false);
 
   useEffect(() => {
@@ -29,6 +52,11 @@ export const Header = ({ currentPage }) => {
   const hamburgerClassNames = classNames(styles.hamburger, {
     [styles.active]: isMenuActive,
   });
+
+  const handleScrollToElement = (elementName) => {
+    handleScroll(elementName);
+    setIsMenuActive(false);
+  }
 
   return (
     <header className={styles.header}>
@@ -56,33 +84,23 @@ export const Header = ({ currentPage }) => {
         </svg>
 
         <nav className={styles.links}>
-          <a className={getLinkClassNames('about')} href="/">
-            About
-          </a>
-          <a className={getLinkClassNames('roadmap')} href="#roadmap">
-            Roadmap
-          </a>
-          <a className={getLinkClassNames('socials')} href="#socials">
-            Socials
-          </a>
+          <NavigationLinks
+            handleScroll={handleScrollToElement}
+            getLinkClassNames={getLinkClassNames}
+          />
         </nav>
 
         {isMenuActive && (
           <motion.nav
             animate={isMenuActive ? 'open' : 'exit'}
             variants={variants}
-            transition={{ ease: "easeOut", duration: .1 }}
+            transition={{ ease: 'easeOut', duration: 0.1 }}
             className={styles.mobile_links}
           >
-            <a className={getLinkClassNames('about')} href="/">
-              About
-            </a>
-            <a className={getLinkClassNames('roadmap')} href="#roadmap">
-              Roadmap
-            </a>
-            <a className={getLinkClassNames('socials')} href="#socials">
-              Socials
-            </a>
+            <NavigationLinks
+              handleScroll={handleScrollToElement}
+              getLinkClassNames={getLinkClassNames}
+            />
           </motion.nav>
         )}
       </div>

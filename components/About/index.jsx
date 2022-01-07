@@ -8,16 +8,14 @@ export const About = ({ setCurrentPage }) => {
   const isOnScreen = useOnScreen(ref);
 
   useEffect(() => {
-    if (isOnScreen && setCurrentPage) {
+    if (isOnScreen) {
       setCurrentPage('about');
     }
   }, [isOnScreen, setCurrentPage]);
 
-  console.log(`About: ${isOnScreen}`);
-
   return (
-    <div id="about" className={styles.container}>
-      <div className={styles.content} ref={ref}>
+    <div className={styles.container} ref={ref}>
+      <div className={styles.content}>
         <div className={styles.row}>
           <Image
             src="/images/beth-nft-image.jpg"

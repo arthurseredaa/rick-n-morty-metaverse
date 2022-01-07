@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
+import { Element, scroller } from 'react-scroll';
 import Head from 'next/head';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Header } from '../components/Header';
 import { About } from '../components/About';
-import styles from '../styles/Home.module.css';
 import { Roadmap } from '../components/Roadmap';
 
 const variants = {
@@ -23,16 +23,19 @@ const variants = {
 export default function Home() {
   const [currentPage, setCurrentPage] = useState('about');
 
+  const handleScroll = (elementName) => {
+    scroller.scrollTo(elementName, {
+      smooth: true,
+    });
+  };
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Rick and Morty: Metaverse</title>
-        <meta
-          name="description"
-          content="NFT collection"
-        />
+        <meta name="description" content="NFT collection" />
       </Head>
-      <Header currentPage={currentPage} />
+      <Header currentPage={currentPage} handleScroll={handleScroll} />
       <AnimatePresence exitBeforeEnter initial={true}>
         <motion.div
           variants={variants}
@@ -41,10 +44,14 @@ export default function Home() {
           exit="exit"
           transition={{ duration: 0.5, type: 'spring' }}
         >
-          <About setCurrentPage={setCurrentPage} />
-          <Roadmap setCurrentPage={setCurrentPage} />
+          <Element name="about">
+            <About setCurrentPage={setCurrentPage} />
+          </Element>
+          <Element name="roadmap">
+            <Roadmap setCurrentPage={setCurrentPage} />
+          </Element>
         </motion.div>
       </AnimatePresence>
-    </div>
+    </>
   );
 }

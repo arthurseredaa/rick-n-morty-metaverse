@@ -22,6 +22,10 @@
   margin-right: 100px;
 }
 
+.links, .mobile_links {
+  cursor: pointer;
+}
+
 .links {
   display: flex;
   justify-content: space-between;
