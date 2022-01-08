@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import classNames from 'classnames';
 import styles from './header.module.css';
+import { Button } from '../_common/Button';
 
 const variants = {
   open: { opacity: 1, visibility: 'visible' },
@@ -29,6 +30,7 @@ const NavigationLinks = ({ getLinkClassNames, handleScroll }) => (
     >
       Socials
     </p>
+    <Button customClass={styles.minting_btn}>Start Minting</Button>
   </>
 );
 
@@ -56,7 +58,7 @@ export const Header = ({ currentPage, handleScroll }) => {
   const handleScrollToElement = (elementName) => {
     handleScroll(elementName);
     setIsMenuActive(false);
-  }
+  };
 
   return (
     <header className={styles.header}>

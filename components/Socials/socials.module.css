@@ -1,0 +1,57 @@
+.container {
+  min-height: 60vh;
+  width: 100%;
+  background-color: #000;
+  padding-top: 300px;
+  color: #fff;
+  position: absolute;
+}
+
+.curved_line {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.social_button {
+  width: 190px;
+  font-size: 25px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-content: flex-start;
+}
+
+@media (max-width: 800px) {
+  .curved_line {
+    height: 100px;
+    top: -1px;
+  }
+
+  .container {
+    min-height: 40vh;
+    padding-top: 100px;
+  }
+
+  .content {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .social_button {
+    margin-bottom: 50px;
+    width: 50%;
+    justify-content: flex-start;
+  }
+}

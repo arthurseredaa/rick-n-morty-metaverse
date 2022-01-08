@@ -1,0 +1,23 @@
+.button {
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgb(214, 91, 91);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button:hover {
+  background-color: rgba(214, 91, 91, 0.8);
+}
+
+.social_icon {
+  margin-right: 10px !important;
+}

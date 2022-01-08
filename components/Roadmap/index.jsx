@@ -9,7 +9,7 @@ export const Roadmap = ({ setCurrentPage }) => {
   const isOnScreen = useOnScreen(ref);
 
   useEffect(() => {
-    if (isOnScreen && setCurrentPage) {
+    if (isOnScreen) {
       setCurrentPage('roadmap');
     }
   }, [isOnScreen, setCurrentPage]);
@@ -31,7 +31,11 @@ export const Roadmap = ({ setCurrentPage }) => {
             height="400"
           />
         </motion.div>
-        <motion.div whileInView={{ opacity: [0, 1] }} className={styles.column}>
+        <motion.div
+          whileInView={{ opacity: [0, 1] }}
+          viewport={{ once: true }}
+          className={styles.column}
+        >
           <h4>Phase 1</h4>
           <h4>Preparation</h4>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis
@@ -44,7 +48,11 @@ export const Roadmap = ({ setCurrentPage }) => {
       </div>
 
       <div className={styles.row}>
-        <motion.div whileInView={{ opacity: [0, 1] }} className={styles.column}>
+        <motion.div
+          whileInView={{ opacity: [0, 1] }}
+          viewport={{ once: true }}
+          className={styles.column}
+        >
           <h4>Phase 2</h4>
           <h4>NFT Giveaway</h4>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis

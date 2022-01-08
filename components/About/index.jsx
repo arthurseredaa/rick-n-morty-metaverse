@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useOnScreen } from '../../hooks/useOnScreen';
 import styles from './about.module.css';
+import { Button } from '../_common/Button';
 
 export const About = ({ setCurrentPage }) => {
   const ref = useRef();
@@ -17,8 +18,8 @@ export const About = ({ setCurrentPage }) => {
   return (
     <div className={styles.container} ref={ref}>
       <div className={styles.content}>
-        <div animate={{ y: [100, 0], opacity: [0, 1] }} className={styles.row}>
-          <div animate={{ opacity: [0, 1] }}>
+        <div className={styles.row}>
+          <div>
             <Image
               src="/images/beth-nft-image.jpg"
               alt=""
@@ -39,9 +40,10 @@ export const About = ({ setCurrentPage }) => {
               repellat dicta placeat, saepe odio earum eos cupiditate tempora.
               Facere, quam asperiores. Nihil et praesentium sed illo facilis,
             </p>
+            <Button customClass={styles.mint_btn}>Mint your NFT&apos;s</Button>
           </div>
         </div>
-        <div className={styles.row} animate={{ opacity: [0, 1] }}>
+        <div className={styles.row}>
           <div className={styles.row_text}>
             <h3 className={styles.title}>
               Giveaway NFT&apos;s !! <span role="img">🥳</span>
