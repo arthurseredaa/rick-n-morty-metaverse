@@ -58,6 +58,9 @@
   padding: 20px;
   margin-top: 30px;
   width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -88,5 +91,9 @@
   .curved_line {
     height: 100px;
     bottom: -99px;
+  }
+
+  .mint_btn {
+    width: 100%;
   }
 }

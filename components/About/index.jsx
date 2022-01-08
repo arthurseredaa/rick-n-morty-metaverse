@@ -53,6 +53,12 @@ export const About = ({ setCurrentPage }) => {
               Giveaway. And after{' '}
               <b>SOLD OUT, ONE of YOU Will GET $1500 LIVE!!</b>
             </p>
+            <Button customClass={styles.mint_btn} social="twitter">
+              Twitter
+            </Button>
+            <Button customClass={styles.mint_btn} social="discord">
+              Discord
+            </Button>
           </div>
           <div>
             <Image
