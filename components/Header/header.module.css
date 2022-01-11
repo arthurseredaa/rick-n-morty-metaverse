@@ -17,10 +17,6 @@
   align-items: center;
 }
 
-.logo {
-  margin-right: 100px;
-}
-
 .links,
 .mobile_links {
   cursor: pointer;
@@ -111,6 +107,10 @@
 
 .minting_btn {
   font-size: 16px;
+}
+
+.logo {
+  font-weight: 700;
 }
 
 @media (max-width: 800px) {

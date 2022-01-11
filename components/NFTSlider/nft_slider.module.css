@@ -1,0 +1,11 @@
+.container {
+  background-color: #000;
+}
+
+.image_wrapper {
+  overflow: hidden;
+}
+
+.image {
+  width: 300px;
+}

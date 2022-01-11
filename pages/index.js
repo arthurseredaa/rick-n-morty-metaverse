@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Element, scroller } from 'react-scroll';
 import Head from 'next/head';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Header } from '../components/Header';
 import { About } from '../components/About';
 import { Roadmap } from '../components/Roadmap';
 import { Socials } from '../components/Socials';
-import {Hero} from '../components/Hero'
+import { Hero } from '../components/Hero';
+import { NFTSlider } from '../components/NFTSlider/NFTSlider';
+import styles from '../styles/home.module.css'
 
 const variants = {
   hidden: {
@@ -33,7 +35,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <Head>
         <title>Rick and Morty: Metaverse</title>
         <meta name="description" content="NFT collection" />
@@ -48,6 +50,7 @@ export default function Home() {
         transition={{ duration: 0.5, type: 'spring' }}
       >
         <Hero />
+        <NFTSlider />
         <Element name="about">
           <About setCurrentPage={setCurrentPage} />
         </Element>
@@ -59,6 +62,6 @@ export default function Home() {
         </Element>
       </motion.div>
       {/* </AnimatePresence> */}
-    </>
+    </div>
   );
 }

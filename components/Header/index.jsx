@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import classNames from 'classnames';
 import styles from './header.module.css';
 import { Button } from '../_common/Button';
+import Image from 'next/image';
 
 const variants = {
   open: { opacity: 1, visibility: 'visible' },
@@ -63,7 +64,9 @@ export const Header = ({ currentPage, handleScroll }) => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <div className={styles.logo}>Logo</div>
+        <div className={styles.logo}>
+          Rick n&apos; Morty: Metaverse
+        </div>
 
         <svg
           className={hamburgerClassNames}
