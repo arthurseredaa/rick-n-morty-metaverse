@@ -23,11 +23,29 @@ export const NFTSlider = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    slideToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
+    speed: 1000,
+    autoplaySpeed: 1000,
     cssEase: 'linear',
+    lazyLoad: 'progressive',
+    centerMode: true,
+    pauseOnHover: false,
+    swipeToSlide: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          dots: true,
+          arrows: true,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: 'unslick',
+      },
+    ],
   };
 
   return (
