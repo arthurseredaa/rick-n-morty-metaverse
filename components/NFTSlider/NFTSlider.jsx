@@ -22,11 +22,11 @@ export const NFTSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 3,
     slideToScroll: 1,
     autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 1000,
+    speed: 2000,
+    autoplaySpeed: 3000,
     cssEase: 'linear',
     lazyLoad: 'progressive',
     centerMode: true,
@@ -36,14 +36,19 @@ export const NFTSlider = () => {
       {
         breakpoint: 768,
         settings: {
-          dots: true,
-          arrows: true,
           slidesToScroll: 1,
+          slidesToShow: 1,
+          speed: 1000,
+          autoplaySpeed: 1500,
+          fade: true,
         },
       },
       {
-        breakpoint: 992,
-        settings: 'unslick',
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3,
+          slideToScroll: 1,
+        }
       },
     ],
   };
@@ -55,9 +60,9 @@ export const NFTSlider = () => {
           <div key={url} className={styles.image_wrapper}>
             <Image
               src={url}
+              alt=""
               width="400"
               height="400"
-              alt=""
               className={styles.image}
             />
           </div>
