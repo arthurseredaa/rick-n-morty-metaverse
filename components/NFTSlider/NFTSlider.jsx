@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -19,19 +20,17 @@ const images = [
 
 export const NFTSlider = () => {
   var settings = {
-    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slideToScroll: 1,
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 3000,
     cssEase: 'linear',
     lazyLoad: 'progressive',
-    centerMode: true,
     pauseOnHover: false,
-    swipeToSlide: false,
+    swipe: false,
     responsive: [
       {
         breakpoint: 768,
@@ -48,7 +47,7 @@ export const NFTSlider = () => {
         settings: {
           slidesToShow: 3,
           slideToScroll: 1,
-        }
+        },
       },
     ],
   };
@@ -58,16 +57,13 @@ export const NFTSlider = () => {
       <Slider {...settings}>
         {images.map((url) => (
           <div key={url} className={styles.image_wrapper}>
-            <Image
-              src={url}
-              alt=""
-              width="400"
-              height="400"
-              className={styles.image}
-            />
+            <img src={url} alt="" className={styles.image} />
           </div>
         ))}
       </Slider>
+      <div className={styles.info}>
+        <h1>Awesome collection!</h1>
+      </div>
     </div>
   );
 };

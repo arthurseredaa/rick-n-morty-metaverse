@@ -8,5 +8,9 @@
 
 .image {
   width: 100%;
-  border-radius: 20px;
+}
+
+.info {
+  background-color: #000;
+  text-align: center;
 }
