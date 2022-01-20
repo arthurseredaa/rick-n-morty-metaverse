@@ -28,3 +28,8 @@
   top: 0;
   bottom: 0;
 }
+
+.hero_wrapper {
+  /* background-color: #000; */
+  z-index: 2;
+}
