@@ -4,7 +4,7 @@ import styles from './hero.module.css';
 
 export const Hero = () => (
   <div className={styles.container}>
-    <video className={styles.video_bg} autoPlay loop muted>
+    <video poster="/images/video-bg-poster.jpg" className={styles.video_bg} autoPlay loop muted>
       <source src="/videos/bg.mp4" type="video/mp4" />
     </video>
     <div className={styles.video_overlay} />
