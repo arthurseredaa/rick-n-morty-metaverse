@@ -6,16 +6,16 @@ import Image from 'next/image';
 import styles from './nft_slider.module.css';
 
 const images = [
-  '/images/carousel/rick-1.png',
-  '/images/carousel/rick-2.png',
-  '/images/carousel/rick-3.png',
-  '/images/carousel/rick-4.png',
-  '/images/carousel/rick-5.png',
-  '/images/carousel/rick-6.png',
-  '/images/carousel/rick-7.png',
-  '/images/carousel/rick-8.png',
-  '/images/carousel/rick-9.png',
-  '/images/carousel/rick-10.png',
+  '/images/carousel/rick-1.webp',
+  '/images/carousel/rick-2.webp',
+  '/images/carousel/rick-3.webp',
+  '/images/carousel/rick-4.webp',
+  '/images/carousel/rick-5.webp',
+  '/images/carousel/rick-6.webp',
+  '/images/carousel/rick-7.webp',
+  '/images/carousel/rick-8.webp',
+  '/images/carousel/rick-9.webp',
+  '/images/carousel/rick-10.webp',
 ];
 
 export const NFTSlider = () => {
