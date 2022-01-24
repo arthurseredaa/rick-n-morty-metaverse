@@ -3,20 +3,21 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
+import carousel from '../assets/carousel.json';
 import styles from './nft_slider.module.css';
 
-const images = [
-  '/images/carousel/rick-1.webp',
-  '/images/carousel/rick-2.webp',
-  '/images/carousel/rick-3.webp',
-  '/images/carousel/rick-4.webp',
-  '/images/carousel/rick-5.webp',
-  '/images/carousel/rick-6.webp',
-  '/images/carousel/rick-7.webp',
-  '/images/carousel/rick-8.webp',
-  '/images/carousel/rick-9.webp',
-  '/images/carousel/rick-10.webp',
-];
+// const images = [
+//   '/images/carousel/rick-1.webp',
+//   '/images/carousel/rick-2.webp',
+//   '/images/carousel/rick-3.webp',
+//   '/images/carousel/rick-4.webp',
+//   '/images/carousel/rick-5.webp',
+//   '/images/carousel/rick-6.webp',
+//   '/images/carousel/rick-7.webp',
+//   '/images/carousel/rick-8.webp',
+//   '/images/carousel/rick-9.webp',
+//   '/images/carousel/rick-10.webp',
+// ];
 
 export const NFTSlider = () => {
   var settings = {
@@ -55,7 +56,7 @@ export const NFTSlider = () => {
   return (
     <div className={styles.container}>
       <Slider {...settings}>
-        {images.map((url) => (
+        {carousel.images.map((url) => (
           <div key={url} className={styles.image_wrapper}>
             <img src={url} alt="" className={styles.image} />
           </div>
