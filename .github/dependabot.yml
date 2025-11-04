@@ -34,3 +34,4 @@ updates:
       npm-patches:
         update-types:
           - "patch"
+
