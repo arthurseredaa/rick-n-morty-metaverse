@@ -1,0 +1,28 @@
+---
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+      - "patch"
+    groups:
+      github-actions-patches:
+        update-types:
+          - "patch"
+  
+  - package-ecosystem: npm
+    directory: "/javascript"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "javascript"
+      - "patch"
+    groups:
+      npm-patches:
+        update-types:
+          - "patch"
