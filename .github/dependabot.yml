@@ -1,33 +1,17 @@
 version: 2
 
 updates:
-  - package-ecosystem: "npm"        # Covers npm, Yarn & pnpm workspaces
-    directory: "/"                  # Repo root; Dependabot will find all package.json files
+  - package-ecosystem: "npm"   # works for npm/yarn/pnpm (with a lockfile)
+    directory: "/"             # root; Dependabot will follow workspaces too
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "06:00"
-      timezone: "Europe/Warsaw"
+      interval: "daily"        # check every day
+    open-pull-requests-limit: 1
+    versioning-strategy: increase
 
-    target-branch: "main"           # Change if your default branch is different
-    versioning-strategy: increase   # Bump ranges so the latest patch becomes the new minimum
-    open-pull-requests-limit: 1     # Keep the queue tiny (groups already consolidate to one PR)
+    labels: ["dependencies", "automated"]
 
-    pull-request-branch-name:
-      separator: "-"                # e.g., dependabot-npm-all-patches
-
-    commit-message:
-      prefix: "deps"
-      include: "scope"              # Adds deps/deps-dev scope to the title
-
-    labels:
-      - "dependencies"
-      - "automated"
-
-    # Group ALL patch updates into ONE PR
+    # Single PR for all PATCH updates
     groups:
       all-patches:
-        patterns:
-          - "*"                     # match every dependency
-        update-types:
-          - "patch"                 # only patch bumps
+        patterns: ["*"]
+        update-types: ["patch"]
